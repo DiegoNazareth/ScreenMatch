@@ -8,8 +8,8 @@ import java.util.ArrayList;
 
 public class Principal {
     public static void main(String[] args) {
-        Pelicula miPelicula = new Pelicula();
-        miPelicula.setNombre("TOy");
+        Pelicula miPelicula = new Pelicula("TOy",2000);
+
         miPelicula.setFechaDeLanzamiento(2000);
         miPelicula.setDuracionEnMinutos(102);
         miPelicula.setIncluidoEnElPlan(true);
@@ -22,16 +22,14 @@ public class Principal {
         System.out.println((miPelicula.getTotalDeLasEvaluaciones()));
         System.out.println(miPelicula.calculaMedia());
 
-        Pelicula otraPelicula= new  Pelicula();
-        otraPelicula.setNombre("CARS");
+        Pelicula otraPelicula= new  Pelicula("CARS",2004);
+
         otraPelicula.setFechaDeLanzamiento(2004);
         otraPelicula.setDuracionEnMinutos(120);
         otraPelicula.muestraFichaTecnica();
 
 
-        Serie casaDragon = new Serie();
-        casaDragon.setNombre("Casa Dragon");
-        casaDragon.setFechaDeLanzamiento(2012);
+        Serie casaDragon = new Serie("Casa Dragon",2012);
         casaDragon.setTemporadas(5);
         casaDragon.setMinutosPorEpisodio(40);
         casaDragon.setEpisodiosPorTemporada(12);
@@ -61,8 +59,8 @@ public class Principal {
 
         filtroRecomendacion.filtra(episodio);
 
-        var peliculaDeDiego = new Pelicula();
-        peliculaDeDiego.setNombre("Avengers End Game");
+        var peliculaDeDiego = new Pelicula("Avengers End Game",2022);
+
         peliculaDeDiego.setDuracionEnMinutos(250);
         peliculaDeDiego.setFechaDeLanzamiento(2022);
 
