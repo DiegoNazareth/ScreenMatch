@@ -1,4 +1,6 @@
+import com.aluracursos.screenmatch.calculos.CalculadoraDeTiempo;
 import com.aluracursos.screenmatch.modelos.Pelicula;
+import com.aluracursos.screenmatch.modelos.Serie;
 
 public class Principal {
     public static void main(String[] args) {
@@ -10,19 +12,41 @@ public class Principal {
 
         miPelicula.muestraFichaTecnica();
 
-        Pelicula otraPelicula= new  Pelicula();
+
         miPelicula.evalua(9.4);
         miPelicula.evalua(8);
-
-
         System.out.println((miPelicula.getTotalDeLasEvaluaciones()));
         System.out.println(miPelicula.calculaMedia());
 
-//        otraPelicula.nombre="CARS";
-//        otraPelicula.fechaDeLanzamiento=2004;
-//        otraPelicula.duracionEnMinutos=120;
-//
-//        //otraPelicula.muestraFichaTecnica();
+        Pelicula otraPelicula= new  Pelicula();
+        otraPelicula.setNombre("CARS");
+        otraPelicula.setFechaDeLanzamiento(2004);
+        otraPelicula.setDuracionEnMinutos(120);
+        otraPelicula.muestraFichaTecnica();
+
+
+        Serie casaDragon = new Serie();
+        casaDragon.setNombre("Casa Dragon");
+        casaDragon.setFechaDeLanzamiento(2012);
+        casaDragon.setTemporadas(5);
+        casaDragon.setMinutosPorEpisodio(40);
+        casaDragon.setEpisodiosPorTemporada(12);
+        System.out.println(casaDragon.getDuracionEnMinutos());
+        casaDragon.muestraFichaTecnica();
+
+
+
+        CalculadoraDeTiempo calculadora = new CalculadoraDeTiempo();
+
+        calculadora.incluye(miPelicula);
+        calculadora.incluye(otraPelicula);
+        calculadora.incluye(casaDragon);
+
+        System.out.println("Tiempo necesario para ver tus titulos favoritos estas vacaciones: " +calculadora.getTiempoTotal()+ " minutos");
+
+
+
+
 
     }
 }
